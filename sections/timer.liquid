@@ -1,0 +1,38 @@
+<div class="slider-component page-width timer-wrap">
+  <div class="timer-wrap">
+    <span class="timer-title">{{ section.settings.message}}</span> <span data-timer="{{ section.settings.date }}"></span>
+  </div>
+</div>
+
+{% stylesheet %}
+.timer-wrap {
+  font-size: 30px;
+  margin: 20px 0;
+}
+.timer-title{
+  font-weight:bold;
+}
+{% endstylesheet %}
+
+{% javascript %}
+(function() {
+let timers = document.querySelectorAll("[data-timer]");
+setInterval(function () {
+  timers.forEach(function (element) {
+
+    let now = new Date();
+    element.innerHTML =
+        now.getHours() + '時' + now.getMinutes() + '分' + now.getSeconds() + '秒';
+  });
+}, 1000);
+})();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Timer",
+  "presets": [{
+    "name": "Timer" 
+  }],
+  "settings":[ { "type": "text", "id": "message", "label": "Message" } ] }
+{% endschema %}

@@ -1,0 +1,49 @@
+<div id="add-bnr-area" class="ImgTextBlock">
+  <div class="ImgTextBlock__text">
+    <p>タイトル</p>
+    <!-- /.ImgTextBlock__text -->
+  </div>
+  <div class="ImgTextBlock__img">
+    <a href="#" target="_blank"><img src="https://placehold.jp/500x150.png" alt=""></a>
+    <!-- /.ImgTextBlock__img -->
+  </div>
+  <!-- /.ImgTextBlock -->
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+{% schema %}
+{
+"name": "ページ下のバナー",
+  "settings": [
+  {
+  "id": "text",
+  "type": "textarea",
+  "label": "Text",
+  "placeholder": "タイトル"
+  },
+  {
+  "id": "img",
+  "type": "image_picker",
+  "label": "Image"
+  },
+  {
+  "id": "url",
+  "type": "text",
+  "label": "Url"
+  }
+  ]
+}
+{% endschema %}
